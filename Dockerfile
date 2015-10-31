@@ -45,5 +45,5 @@ USER tester
 WORKDIR /home/tester/namecoin-testnet-box
 
 # expose two rpc ports for the nodes to allow outside container access
-EXPOSE 19001 19011
+EXPOSE 18001 18011
 CMD ["/bin/bash"]
