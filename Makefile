@@ -38,3 +38,23 @@ stop:
 clean:
 	find 1/regtest/* -not -name 'server.*' -delete
 	find 2/regtest/* -not -name 'server.*' -delete
+
+run:
+	$(NAMECOIND) $(B1) $(CMD)
+	$(NAMECOIND) $(B2) $(CMD)
+
+run1:
+	$(NAMECOIND) $(B1) $(CMD)
+
+run2:
+	$(NAMECOIND) $(B2) $(CMD)
+
+name_scan:
+	$(NAMECOIND) $(B1) name_scan $(NAME)
+
+name_new:
+	$(NAMECOIND) $(B1) name_new $(NAME)
+
+name_firstupdate:
+	$(NAMECOIND) $(B1) name_firstupdate $(NAME) $(RAND)
+
