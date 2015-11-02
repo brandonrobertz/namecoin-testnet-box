@@ -10,7 +10,7 @@ There are two nodes for the moment, both in regtest mode. This means you can gen
 
 Following basic docker.io build procedures:
 
-    docker build . -t brandonrobertz/namecoin-testnet-box
+    docker build -t brandonrobertz/namecoin-testnet-box .
 
 The image will be build and tagged with `brandonrobertz/namecoin-testnet-box`.
 Then you can get a shell in the container with:
