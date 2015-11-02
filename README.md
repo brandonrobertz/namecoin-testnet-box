@@ -10,17 +10,15 @@ There are two nodes for the moment, both in regtest mode. This means you can gen
 
 Following basic docker.io build procedures:
 
-    docker build .
+    docker build . -t brandonrobertz/namecoin-testnet-box
 
-If you don't know the docker image ID, an easy way to find it
-is after the docker build is complete, it will print out a
-success message with the image ID.
-
-    Successfully built 7247045f0cde
-
+The image will be build and tagged with `brandonrobertz/namecoin-testnet-box`.
 Then you can get a shell in the container with:
 
-    docker run -p 18001:18001 -p 18011:18011 -t -i 7247045f0cde /bin/bash
+    docker run -p 18001:18001 -p 18011:18011 -t -i brandonrobertz/namecoin-testnet-box /bin/bash
+
+You can replace `brandonrobertz/namecoin-testnet-box` with anything you
+want.
 
 You can start and interact with the testnet using make:
 
