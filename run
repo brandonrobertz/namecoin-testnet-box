@@ -1,0 +1,2 @@
+#!/bin/bash
+docker run -p 18001:18001 -p 18011:18011 -t -i brandonrobertz/namecoin-testnet-box ./makecoins

@@ -1,0 +1,22 @@
+#!/bin/bash
+# default 10 minutes like normal bitcoin
+PAUSE=`expr 60 \* 10`
+if [ -n "$1" ]; then
+  PAUSE="$1"
+fi
+
+# it usually takes about 30 seconds to start
+echo "[*] Starting bitcoind processes"
+make start
+while ! make getinfo; do
+  echo "    waiting for bitcoind to start ..."
+  sleep 30
+done
+echo "[*] Bitcoin daemons started!"
+
+echo "[*] Simulating periodic block mining ..."
+echo "    a new block will be generated every $PAUSE seconds"
+while true; do
+  sleep "$PAUSE"
+done
+

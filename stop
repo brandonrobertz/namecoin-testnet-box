@@ -1,0 +1,11 @@
+#!/bin/bash
+CID=`docker ps | grep makecoins | sed 's/\([a-z0-9]\+\) .*/\1/g'`
+FAILURE="$?"
+#echo CID $CID FAIL? $FAILURE
+if [ -z "$CID" ] || [ "$FAILURE" != "0" ]; then
+  echo "Couldn't find container ID. Try docker ps"
+  exit 1
+else
+  echo Container ID: $CID
+  docker kill $CID
+fi
